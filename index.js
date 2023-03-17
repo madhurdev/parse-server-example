@@ -10,7 +10,7 @@ const PushAdapter = require('@parse/push-adapter').default;
 const pushOptions = {
   ios: {
     token: {
-      key: '/AuthKey_3L58C9R9D6.p8',
+      key: './AuthKey_3L58C9R9D6.p8',
       keyId: "3L58C9R9D6",
       teamId: "6A7255KVFQ" // The Team ID for your developer account
     },
