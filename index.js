@@ -15,12 +15,26 @@ if (!databaseUri) {
 const config = {
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
-  appId: process.env.APP_ID || 'myAppId',
-  masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
+  appId: process.env.APP_ID || 'madhur',
+  masterKey: process.env.MASTER_KEY || 'madhur', //Add your master key here. Keep it secret!
   serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse', // Don't forget to change to https if needed
   liveQuery: {
     classNames: ['Posts', 'Comments'], // List of classes to support for query subscriptions
   },
+  push: {
+    android: {
+      apiKey: 'AAAAYnp0yjk:APA91bG_JBjkvK8XXIojtQGcyeTQ2-NsJcbTjeUaAZgVgbOu1IVNZRvodJlwcK5MmX87Xu8rkl--SJQIq7Nqjn1ZAhPw5tv4lQDdDQMXtV7onI47IBLGdDhSe8oH-hqVN_E_2Hzi25Kb' // The Server API Key of FCM
+    },
+    ios: {
+      pfx: '', // The filename of private key and certificate in PFX or PKCS12 format from disk  
+      passphrase: '', // optional password to your p12
+      cert: '', // If not using the .p12 format, the path to the certificate PEM to load from disk
+      key: '', // If not using the .p12 format, the path to the private key PEM to load from disk
+      bundleId: 'com.forklabs.queuick', // The bundle identifier associated with your app
+      production: false // Specifies which APNS environment to connect to: Production (if true) or Sandbox
+    }
+  }
+  
 };
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
