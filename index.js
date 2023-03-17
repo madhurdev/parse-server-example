@@ -8,7 +8,15 @@ const args = process.argv || [];
 const test = args.some(arg => arg.includes('jasmine'));
 const PushAdapter = require('@parse/push-adapter').default;
 const pushOptions = {
-  // ios: { /* iOS push options */ },
+  ios: {
+    token: {
+      key: '/AuthKey_3L58C9R9D6.p8',
+      keyId: "3L58C9R9D6",
+      teamId: "6A7255KVFQ" // The Team ID for your developer account
+    },
+    topic: 'com.forklabs.queuick', // The bundle identifier associated with your app
+    production: false
+  },
   android: {
     senderId: "422961269305",
     apiKey: "AAAAYnp0yjk:APA91bG_JBjkvK8XXIojtQGcyeTQ2-NsJcbTjeUaAZgVgbOu1IVNZRvodJlwcK5MmX87Xu8rkl--SJQIq7Nqjn1ZAhPw5tv4lQDdDQMXtV7onI47IBLGdDhSe8oH-hqVN_E_2Hzi25Kb"
